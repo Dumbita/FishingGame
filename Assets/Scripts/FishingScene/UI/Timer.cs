@@ -13,6 +13,8 @@ public class Timer : MonoBehaviour
     public static float prof;
 
     public Text result;
+    public Image resultImage;
+    public Image resultbills;
 
     public GameObject[] testing;
 
@@ -21,6 +23,8 @@ public class Timer : MonoBehaviour
 
         count = 30;
         result.enabled = false;
+        resultImage.enabled = false;
+        resultbills.enabled = false;
         clock.fillAmount = 0;
 
         for (int i = 0; i < testing.Length; i++)
@@ -71,6 +75,8 @@ public class Timer : MonoBehaviour
             float percentage = ( Collision.contaminated / Collision.count) * 100;
 
             result.enabled = true;
+            resultImage.enabled = true;
+            resultbills.enabled = true;
 
             float profit = (Collision.count - Collision.contaminated) * 30f;
 
