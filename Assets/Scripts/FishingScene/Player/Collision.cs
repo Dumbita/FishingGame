@@ -8,11 +8,16 @@ public class Collision : MonoBehaviour
     public static float count;
     public static float contaminated;
 
+    public AudioSource catching;
+    public AudioClip[] identity = new AudioClip[2];
+
     void Start()
     {
 
         count = 0;
         contaminated = 0;
+
+        catching.volume = 0.3f;
 
     }
 
@@ -37,6 +42,14 @@ public class Collision : MonoBehaviour
                 {
 
                     contaminated++;
+
+                    catching.PlayOneShot(identity[1]);
+
+                }
+                else if (collision.gameObject.tag == "FishGreen")
+                {
+
+                    catching.PlayOneShot(identity[0]);
 
                 }
 

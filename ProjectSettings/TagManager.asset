@@ -6,6 +6,8 @@ TagManager:
   tags:
   - FishRed
   - FishGreen
+  - Fish
+  - Music
   layers:
   - Default
   - TransparentFX
