@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     public Text timer;
+    public Image clock;
     int count;
 
     public static float prof;
@@ -20,6 +21,7 @@ public class Timer : MonoBehaviour
 
         count = 30;
         result.enabled = false;
+        clock.fillAmount = 0;
 
         for (int i = 0; i < testing.Length; i++)
         {
@@ -40,6 +42,7 @@ public class Timer : MonoBehaviour
         yield return new WaitForSeconds(f);
 
         count--;
+        clock.fillAmount += 0.034f;
 
         if (count! > 0)
         {
