@@ -5,6 +5,9 @@ using UnityEngine;
 public class EMovement : MonoBehaviour
 {
 
+    public Sprite[] visual = new Sprite[2];
+    BoxCollider2D boundaries;
+
     Vector2 screenBounds;
     Rigidbody2D fish;
 
@@ -22,6 +25,8 @@ public class EMovement : MonoBehaviour
         fish = GetComponent<Rigidbody2D>();
 
         screen = FindObjectOfType<ScreenBounds>();
+
+        boundaries= GetComponent<BoxCollider2D>();
 
         EnemySpawning();
 
@@ -45,11 +50,25 @@ public class EMovement : MonoBehaviour
 
         fish.velocity = new Vector2(-10,0);
 
+        if(gameObject.tag == "FishGreen")
+        {
+
+            transform.localScale = new Vector2(0.05f, 0.05f);
+
+        }
+     
     }
     private void Right()
     {
 
         fish.velocity = new Vector2(10, 0);
+
+        if (gameObject.tag == "FishGreen")
+        {
+
+            transform.localScale = new Vector2(-0.05f, 0.05f);
+
+        }
 
     }
     //chance of being trash of a fish
@@ -61,7 +80,9 @@ public class EMovement : MonoBehaviour
         if (chance > 40)
         {
 
-            basic.color = Color.green;
+            basic.sprite = visual[0];
+
+            boundaries.size = new Vector2(64f,20f);
 
             gameObject.tag = "FishGreen";
 
@@ -69,7 +90,11 @@ public class EMovement : MonoBehaviour
         else if (chance < 60)
         {
 
-            basic.color = Color.red;
+            basic.sprite = visual[1];
+
+            transform.localScale = new Vector2(0.03f, 0.03f);
+
+            boundaries.size = new Vector2(50f, 62f);
 
             gameObject.tag = "FishRed";
 

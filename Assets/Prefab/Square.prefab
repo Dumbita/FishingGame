@@ -120,6 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5231bc7068de1418935ddd425f7bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visual:
+  - {fileID: 21300000, guid: ea61c12af13bd3743b4fbcd5e60e7398, type: 3}
+  - {fileID: 21300000, guid: 12c1eb3bd1c8e174db5cebdf3f3ba37a, type: 3}
   screen: {fileID: 0}
 --- !u!61 &1616893765599054888
 BoxCollider2D:
