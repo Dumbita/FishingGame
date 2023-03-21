@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
 {
     public Text timer;
     public Image clock;
-    int count;
+    public static int count;
 
     public static float prof;
 
